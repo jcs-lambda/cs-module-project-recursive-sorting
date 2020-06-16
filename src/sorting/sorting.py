@@ -6,10 +6,10 @@ def merge(arrA:list, arrB:list) -> list:
     # loop is finished when both arrays are empty
     for i in range(len(merged_arr)):
         # arrA is empty, grab from arrB
-        if len(arrA) == 0:
+        if not arrA:
             merged_arr[i] = arrB.pop(0)
         # arrB is empty, grab from arrA
-        elif len(arrB) == 0:
+        elif not arrB:
             merged_arr[i] = arrA.pop(0)
         # next value in arrA is less than next value in arrB
         # grab from arrA
