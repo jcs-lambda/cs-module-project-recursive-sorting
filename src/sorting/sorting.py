@@ -22,12 +22,22 @@ def merge(arrA:list, arrB:list) -> list:
     
     return merged_arr
 
-# TO-DO: implement the Merge Sort function below recursively
+
 def merge_sort(arr):
-    # Your code here
+    # split array into halves
+    midpoint = len(arr) // 2
+    left = arr[:midpoint]
+    right = arr[midpoint:]
 
+    # recurse while working with halves where either's length
+    # is greater than 1
+    if len(left) > 1 or len(right) > 1:
+        return merge(merge_sort(left), merge_sort(right))
+    # base case: each half has no more than 1 item
+    # begin unwiding recursion
+    else:
+        return merge(left, right)
 
-    return arr
 
 # STRETCH: implement the recursive logic for merge sort in a way that doesn't 
 # utilize any extra memory
