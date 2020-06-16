@@ -40,11 +40,11 @@ def agnostic_binary_search(arr, target):
         if arr[center_index] == target:
             found = center_index
         # use apprpriate comparison based on ascending or descending order,
-        # if True, target is to the left of center_index,
+        # if True, target can only be left of center_index,
         # adjust highest_index to one less than current center_index
         elif compare(arr[center_index]):
             highest_index = center_index - 1
-        # target is to the right of center_index,
+        # target can only be right of center_index,
         # adjust lowest_index to one more than current center_index
         else:
             lowest_index = center_index + 1
